@@ -15,7 +15,7 @@ app.get("/favicon.ico", (req, res) => res.status(204));
 //   next();
 // });
 
-app.use(adminRoutes);
+app.use("/admin", adminRoutes);
 
 app.use(shopRoutes);
 

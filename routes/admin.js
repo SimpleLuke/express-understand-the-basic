@@ -2,14 +2,16 @@ const express = require("express");
 
 const router = express.Router();
 
+//only for get request
 router.get("/add-product", (req, res, next) => {
   //   console.log("In another middleweare!");
   res.send(
-    '<form action="/product" method="POST"><input type="text" name="title"><button type="submit">Submit</button></form>'
+    '<form action="/admin/add-product" method="POST"><input type="text" name="title"><button type="submit">Submit</button></form>'
   );
 });
 
-router.post("/product", (req, res, next) => {
+//only for POST request
+router.post("/add-product", (req, res, next) => {
   console.log(req.body);
   res.redirect("/");
 });
