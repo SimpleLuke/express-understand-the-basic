@@ -1,8 +1,8 @@
-const http = require("http");
-
 const express = require("express");
 
 const app = express();
+
+app.get("/favicon.ico", (req, res) => res.status(204));
 
 app.use((req, res, next) => {
   console.log("In the middleweare!");
@@ -13,6 +13,4 @@ app.use((req, res, next) => {
   res.send("<h1>Hello world!</h1>");
 });
 
-const server = http.createServer(app);
-
-server.listen(3000);
+app.listen(3000);
