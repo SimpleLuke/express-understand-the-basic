@@ -3,8 +3,8 @@ const express = require("express");
 const path = require("path");
 
 const bodyParser = require("body-parser");
-const adminRoutes = require("./routes/admin");
-const shopRoutes = require("./routes/home");
+const adminData = require("./routes/admin");
+const shopRoutes = require("./routes/shop");
 
 const app = express();
 
@@ -18,7 +18,7 @@ app.get("/favicon.ico", (req, res) => res.status(204));
 //   next();
 // });
 
-app.use("/admin", adminRoutes);
+app.use("/admin", adminData.routes);
 
 app.use(shopRoutes);
 
